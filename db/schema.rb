@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2021_10_02_030454) do
 
-  create_table "cart_items", charset: "utf8mb4", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "cart_items", force: :cascade do |t|
     t.integer "item_quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -22,14 +25,14 @@ ActiveRecord::Schema.define(version: 2021_10_02_030454) do
     t.index ["product_id"], name: "index_cart_items_on_product_id"
   end
 
-  create_table "carts", charset: "utf8mb4", force: :cascade do |t|
+  create_table "carts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
-  create_table "order_items", charset: "utf8mb4", force: :cascade do |t|
+  create_table "order_items", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "product_id"
@@ -38,14 +41,14 @@ ActiveRecord::Schema.define(version: 2021_10_02_030454) do
     t.index ["product_id"], name: "index_order_items_on_product_id"
   end
 
-  create_table "orders", charset: "utf8mb4", force: :cascade do |t|
+  create_table "orders", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "products", charset: "utf8mb4", force: :cascade do |t|
+  create_table "products", force: :cascade do |t|
     t.string "name", null: false
     t.string "category", null: false
     t.text "summary", null: false
@@ -55,7 +58,7 @@ ActiveRecord::Schema.define(version: 2021_10_02_030454) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "reviews", charset: "utf8mb4", force: :cascade do |t|
+  create_table "reviews", force: :cascade do |t|
     t.string "title", null: false
     t.text "content", null: false
     t.decimal "rating", precision: 10, scale: 2
@@ -69,7 +72,7 @@ ActiveRecord::Schema.define(version: 2021_10_02_030454) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
     t.string "password", null: false

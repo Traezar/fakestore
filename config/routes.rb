@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   end
   resources :products, only: [:index,:show]
   get 'cart/:id', to: 'cart#show'
-  put 'add_to_cart', to: 'cart#add_to_cart'
-  put 'remove_from_cart', to: 'cart#remove_from_cart'
+  post 'add_to_cart', to: 'cart#add_to_cart'
+  post 'remove_from_cart', to: 'cart#remove_from_cart'
 end
