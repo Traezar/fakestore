@@ -3,7 +3,7 @@ class OrderSerializer < ActiveModel::Serializer
 
 
   def total
-    @order.total
+    @object.total
   end
   class ItemSerializer < ActiveModel::Serializer
     attributes :name, :category, :summary, :price, :quantity
