@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
     if @product.save
       render json: @product , serializer: ProductSerializer
     else
-      render json: @product.errors, status: :unprocessable_entity }
+      render json: @product.errors, status: :unprocessable_entity 
     end
   end
 
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       render json: @product , serializer: ProductSerializer
     else
-      render json: @product.errors, status: :unprocessable_entity }
+      render json: @product.errors, status: :unprocessable_entity
     end
   end
 
