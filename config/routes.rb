@@ -1,5 +1,9 @@
+
 Rails.application.routes.draw do
   resources :orders, execpt: [:index]
+  scope :admin do
+    resources :products , only: [:create,:update]
+  end
   resources :products, only: [:index,:show]
   get     'cart/:id',         to: 'cart#show'
   post    'add_to_cart',      to: 'cart#add_to_cart'
