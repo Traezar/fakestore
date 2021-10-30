@@ -2,15 +2,13 @@ class BookmarkController < ApplicationController
 
   def add_bookmark
     bm = Bookmark.new(filtered_params)
-    render json: { head :no_content } if bm.save!
+    render json: { message: "bookmark added" }, status: :ok if bm.save!
   end
 
 
   def delete_bookmark
     bm = Bookmark.find_by(filtered_params)
-    bm.destroy
-    render json: { head :no_content }
-    
+    render json: { message: "removed" }, status: :ok if  bm.destroy
   end
 
   def filtered_params
