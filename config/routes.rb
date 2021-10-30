@@ -1,6 +1,6 @@
 
 Rails.application.routes.draw do
-  resources :orders, execpt: [:index]
+  resources :orders, only: [:create,:update,:destroy,:show]
   scope :admin do
     resources :products , only: [:create,:update]
   end
