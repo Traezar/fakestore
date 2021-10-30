@@ -7,7 +7,7 @@ class ProductReviewController < ApplicationController
 
 
   def delete_product_review
-    bm = ProductReview.find_by(filtered_params)
+    bm = ProductReview.find(params[:id])
     bm.destroy
     render json: { status: 204 }
     

@@ -7,7 +7,7 @@ class BookmarkController < ApplicationController
 
 
   def delete_bookmark
-    bm = Bookmark.find_by(filtered_params)
+    bm = Bookmark.find(params[:id])
     render json: { message: "removed" }, status: :ok if  bm.destroy
   end
 
