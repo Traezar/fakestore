@@ -1,5 +1,5 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id, , :total
+  attributes :id,  :total
   has_many :order_items
 
   def total
