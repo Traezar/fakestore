@@ -7,10 +7,10 @@ class OrderSerializer < ActiveModel::Serializer
   end
   class OrderItemSerializer < ActiveModel::Serializer
     attributes :name, :category, :summary, :price, :quantity
-
-    def name; product.name;end
-    def category; product.category; end
-    def summary; product.summary; end
-    def price; product.price; end
+  
+    def name;     @object.product.name;end
+    def category; @object.product.category; end
+    def summary;  @object.product.summary; end
+    def price;    @object.product.price; end
   end
 end
