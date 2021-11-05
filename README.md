@@ -79,5 +79,6 @@ id | user_id|
 ### Delete 
 `DEL product_reviews/:id`  
 ## Orders
-
+### READ
+  `GET /products/:id`  
 
