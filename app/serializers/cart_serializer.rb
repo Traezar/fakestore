@@ -6,7 +6,7 @@ class CartSerializer < ActiveModel::Serializer
     object.total
   end
   class CartItemSerializer < ActiveModel::Serializer
-    attributes :name, :category, :summary, :price, :item_quantity
+    attributes :name, :category, :summary, :price, :quantity
 
     def name
       object.product.name
