@@ -8,6 +8,10 @@
  2) Current table format suggests that one user has many carts, and each cart has one product.
     **Impact unable to CRUD carts**
 #### Correct format
+
+#### Checkout
+  **Request**  `POST /checkout_cart/:id` 
+
 ##### Carts
 ### Create/Update(Carts are automatically created when i items is added)  
   **Request**  `POST /add_to_cart`  
@@ -23,8 +27,8 @@
      ]
     }
   ```
-### DELETE (Carts are automatically created when i items is added)  
-  **Request**  `POST /add_to_cart`  
+### DELETE 
+  **Request**  `POST /remove_from_cart`  
   **Request body**
   ```json
     {
