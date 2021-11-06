@@ -9,18 +9,36 @@
     **Impact unable to CRUD carts**
 #### Correct format
 ##### Carts
-
-id | user_id|
-|---|---|
-1| 234|
-
-##### CartItems
-
-  id | cart_id| product_id| quantity|
-  |---|---|---|---|
-  1| 1| 7|6
-#### Working 
-
+### Create/Update(Carts are automatically created when i items is added)  
+  **Request**  `POST /add_to_cart`  
+  **Request body**
+  ```json
+    {
+     "user_id": "1",
+     "cart_items":[
+        {
+         "product_id": 1,
+         "quantity": 5
+        }
+     ]
+    }
+  ```
+### DELETE (Carts are automatically created when i items is added)  
+  **Request**  `POST /add_to_cart`  
+  **Request body**
+  ```json
+    {
+     "user_id": "1",
+     "cart_items":[
+        {
+         "product_id": 1,
+         "quantity": 5
+        }
+     ]
+    }
+  ```
+### READ  
+  `GET /carts/:id`  
 
 ##  Products
 
